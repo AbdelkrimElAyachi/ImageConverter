@@ -19,11 +19,13 @@ def converting(img,specific_format):
         img.convertToJpeg()    
 
 
-def convertGroup(folder,specifi_folder,specific_format):
+def convertGroup(folder,specific_folder,specific_format):
 
     for file_name in os.listdir(folder):
-        file_path = os.path.join(specifi_folder,file_name)
-        print(f"converting {file_path} to {specific_format} and put it in {specifi_folder}")
+        file_path = os.path.join(folder,file_name)
+        if(os.path.isfile(file_path)):
+            if(file_path.endswith(".png") or file_path.endswith("jpg") or file_path.endswith("gif") or file_path.endswith("jpeg")):
+                convertSingle(file_path,specific_folder,specific_format)
 
 
 def convertSingle(path,specific_folder,specific_format):

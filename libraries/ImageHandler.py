@@ -8,13 +8,10 @@ class ImageHandler :
     def __init__(self,path,folder="results") -> None:
 
         self.path = os.path.normpath(path)
-        print("path : ",self.path)
         self.ext = self.path.split(".")[1]
-        print("extension : ",self.ext)
         self.fname = self.path.split("\\")[-1].split(".")[0]
-        print("file name : ",self.fname)
         self.folder = folder
-        print("folder : ",self.folder)
+        print(" "*25+f"path : {self.path} || extension : {self.ext} || file name : {self.fname} || folder : {self.folder}")
 
         try:
             self.img = Image.open(self.path)  
