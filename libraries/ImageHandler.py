@@ -22,7 +22,7 @@ class ImageHandler :
             print(e)
             exit("exit the app with code error 1")
 
-        self.createFolder()
+
 
 
 
@@ -34,6 +34,7 @@ class ImageHandler :
 
 
     def getMetaData(self):
+
         extra_data_result = {}
         extradata = self.img.getexif()
 
@@ -48,6 +49,7 @@ class ImageHandler :
 
 
     def convertToWebp(self):
+        self.createFolder()
         try:
             self.img.save(f"{self.folder}\\{self.fname}.webp",format="webp",loseless=False,quality=80)
             # When loseless set to True, it applies lossless compression, resulting in larger file sizes but no loss in quality. The default value is False.
@@ -58,6 +60,7 @@ class ImageHandler :
 
 
     def convertToJpeg(self):
+        self.createFolder()
         try:
             self.img.save(f"{self.folder}\\{self.fname}.jpeg",format="JPEG",quality=75)
             # Specifies the image quality level as an integer between 1 and 95 or 100.
@@ -68,6 +71,7 @@ class ImageHandler :
 
 
     def convertToGif(self,TransparentColor):
+        self.createFolder()
         try:
             self.img.save(f"{self.folder}\\{self.fname}.gif",format="GIF",transparency=TransparentColor)
             # In a GIF image, one color index can be designated as the transparent color. 
@@ -78,6 +82,7 @@ class ImageHandler :
 
 
     def convertToPng(self):
+        self.createFolder()
         try:
             self.img.save(f"{self.folder}\\{self.fname}.png",format="PNG",optimize=True,compress_level=6)
             # when optimize set to true it applies different compression techniques to reduce file size default is false 

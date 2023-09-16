@@ -17,7 +17,7 @@ class inputsReader:
 
             elif i==0:
                 current = []
-                self.lst["--start"] = current        
+                self.lst["--paths"] = current        
 
 
     def getArgs(self):
