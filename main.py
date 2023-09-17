@@ -24,7 +24,7 @@ def convertGroup(folder,specific_folder,specific_format):
     for file_name in os.listdir(folder):
         file_path = os.path.join(folder,file_name)
         if(os.path.isfile(file_path)):
-            if(file_path.endswith(".png") or file_path.endswith("jpg") or file_path.endswith("gif") or file_path.endswith("jpeg")):
+            if(file_path.endswith(".png") or file_path.endswith("jpg") or file_path.endswith("gif") or file_path.endswith("jpeg") or file_path.endswith("jfif")):
                 convertSingle(file_path,specific_folder,specific_format)
 
 
